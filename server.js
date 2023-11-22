@@ -10,7 +10,8 @@ app.get('/', (req, res) => {
 })
 
 app.post('/merge', upload.array('pdfs',2), function (req, res, next) {
-    
+    console.log(req.files)
+    res.send({data : req.files})
 })
 
 app.listen(port, () => {
